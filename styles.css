@@ -1,0 +1,142 @@
+*, *::before, *::after {
+  border-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bg-color-pink:#FFBAC0;
+  --bg-color-blue: #7794BB;
+  --font-color: #FFFFFF;
+  --bg-color: rgba(0, 0, 0, .3);
+  --b-radius: 5px;
+  --global-margin: 10px;
+  --global-padding: 10px;
+}
+
+body {
+  background: linear-gradient(-45deg, #FFBAC0, #e73c7e, #23a6d5, #7794BB);
+  background-size: 400% 400%;
+  color: var(--font-color);
+  font-family: Verdana;
+  font-size: 10pt;
+  line-height: 1.4;
+  animation: gradient 30s ease infinite;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+}
+
+.main-window {
+  background-color: var(--bg-color);
+  grid-column: 2/3;
+  border-radius: 10px;
+  margin: 5% 0;
+}
+
+.nav-bar {
+  display: flex;
+  background: var(--bg-color);
+  margin: 10px;
+  margin-bottom: 0;
+  padding: var(--global-padding);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu li {
+  display: inline;
+  padding: 0 10px;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: 15% auto;
+}
+
+.main-menu {
+  grid-column: 1/2;
+  list-style: none;
+  background: var(--bg-color);
+  border-radius: 5px;
+  margin: 10px;
+  padding: var(--global-padding);
+}
+
+.main-menu li {
+  padding: 5px 0;
+}
+
+.main-articles {
+  background: var(--bg-color);
+  border-radius: 5px;
+  margin: 10px;
+  margin-left: 0;
+  padding: var(--global-padding);
+}
+
+article {
+  margin: 20px 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+article h2 {
+  padding-left: 0;
+  border-bottom: 1px solid #FFFFFF50;
+  border-image-source: linear-gradient(-90deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
+  border-image-slice: 1;
+}
+
+p {
+  padding: 20px 0;
+}
+
+.footer {
+  display: block;
+  float: right;
+  font-size: 4rem;
+  padding-right: 20px;
+}
+
+a {
+  color: var(--font-color);
+  opacity: .3;
+  text-decoration: none;
+}
+
+a:hover {
+  animation: link-color .8s ease-out forwards;
+}
+
+
+/*  Animations*/
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes link-color {
+  0% {
+    color: var(--font-color);
+    opacity: .3;
+  }
+  
+  100% {
+    color: var(--font-color);
+    opacity: 1;
+  }
+}
